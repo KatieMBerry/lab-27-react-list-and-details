@@ -2,10 +2,32 @@ import React from 'react'
 import {
   BrowserRouter as Router,
   Route,
-  Switch,
-  Link,
+  Switch
 } from "react-router-dom";
+import CharacterDetail from './characters/CharacterDetail';
+import CharacterList from './characters/CharacterList';
 
-export default function App() {
-  return <h1>Hello World</h1>;
+export default class App extends React.Component {
+  render() {
+    return (
+      <>
+        <div className="main">
+          <Router>
+            <Switch>
+              <Route
+                path="/"
+                exact
+                component={CharacterList}
+              />
+              <Route
+                path="/details"
+                exact
+                component={CharacterDetail}
+              />
+            </Switch>
+          </Router>
+        </div>
+      </>
+    );
+  }
 }
