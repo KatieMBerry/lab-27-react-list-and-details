@@ -5,7 +5,7 @@ import {
   Switch
 } from "react-router-dom";
 import CharacterDetail from '../characters/CharacterDetail';
-import CharacterList from '../characters/CharacterList';
+import AllCharacters from '../../containers/AllCharacters';
 
 export default class App extends React.Component {
   render() {
@@ -15,16 +15,14 @@ export default class App extends React.Component {
           <Router>
             <Switch>
               <Route
-                path="/"
-                exact
-                render={(routerProps) => <CharacterList {...routerProps} />}
-              // component={CharacterList}
+                exact path="/"
+                // render={(routerProps) => <CharacterList {...routerProps} />}
+                component={AllCharacters}
               />
               <Route
-                path="/details"
-                exact
-                render={(routerProps) => <CharacterDetail {...routerProps} />}
-              // component={CharacterDetail}
+                path="/details/:id"
+                // render={(routerProps) => <CharacterDetail {...routerProps} />}
+                component={CharacterDetail}
               />
             </Switch>
           </Router>
