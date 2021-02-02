@@ -17,12 +17,14 @@ export default class App extends React.Component {
               <Route
                 path="/"
                 exact
-                component={CharacterList}
+                render={(routerProps) => <CharacterList {...routerProps} />}
+              // component={CharacterList}
               />
               <Route
                 path="/details"
                 exact
-                component={CharacterDetail}
+                render={(routerProps) => <CharacterDetail {...routerProps} />}
+              // component={CharacterDetail}
               />
             </Switch>
           </Router>
