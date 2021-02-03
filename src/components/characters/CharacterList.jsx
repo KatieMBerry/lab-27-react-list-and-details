@@ -1,11 +1,12 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import CharacterDetail from './CharacterDetail';
+import Character from './Character';
+
 
 const CharacterList = ({ characters }) => {
     const characterElements = characters.map(character => (
         <li key={character.id}>
-            <CharacterDetail {...character} />
+            <Character {...character} />
         </li>
     ));
 
