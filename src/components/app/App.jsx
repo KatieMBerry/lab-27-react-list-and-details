@@ -4,8 +4,9 @@ import {
   Route,
   Switch
 } from "react-router-dom";
-import CharacterDetail from '../characters/CharacterDetail';
 import AllCharacters from '../../containers/AllCharacters';
+import CharacterDetail from '../characters/CharacterDetail';
+
 
 export default class App extends React.Component {
   render() {
@@ -15,12 +16,14 @@ export default class App extends React.Component {
           <Router>
             <Switch>
               <Route
-                exact path="/"
+                exact
+                path="/"
                 // render={(routerProps) => <CharacterList {...routerProps} />}
                 component={AllCharacters}
               />
               <Route
-                path="/details/:id"
+                exact
+                path="/characters/:id"
                 // render={(routerProps) => <CharacterDetail {...routerProps} />}
                 component={CharacterDetail}
               />
